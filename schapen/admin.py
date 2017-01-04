@@ -4,7 +4,7 @@ from django.contrib import admin
 
 # aanpassing is nodig om de schapen gegevens in de admin backend te zien
 
-from .models import Schapen
+from .models import schapen
 
 class reviewSchapen(admin.ModelAdmin):
         model = Review
