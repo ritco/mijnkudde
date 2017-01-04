@@ -12,4 +12,4 @@ class Schapen(models.Model):
     geslacht = models.IntegerField(choices=geslacht_keuzes)
     geboortedatum = models.DateTimeField()
     einddatum = models.DateTimeField()
-    Sanitel = models.CharField(length=11)
+    Sanitel = models.CharField(max_length=11)
