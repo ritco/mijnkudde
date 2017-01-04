@@ -4,10 +4,7 @@ from django.contrib import admin
 
 # aanpassing is nodig om de schapen gegevens in de admin backend te zien
 
-from .models import Schapen
+from django.db.models import get_models, get_app
 
-class SchapenAdmin(admin.ModelAdmin):
-    model = review
-    list_display = ('intern_nummer', 'geslacht')
-
-admin.site.register(Schapen, SchapenAdmin)
+for model in get_models(get_app('schapen')):
+    admin.site.register(model)
