@@ -8,7 +8,7 @@ from django.db import models
 class Schapen(models.Model):
     geslacht_keuzes = ((1, 'Ram'), (2, 'Ooi'))
 
-    intern_nummer = models.CharField(max-length=50)
+    intern_nummer = models.CharField(max_length=50)
     geslacht = models.IntegerField(choices=geslacht_keuzes)
     geboortedatum = models.DateTimeField()
     einddatum = models.DateTimeField()
