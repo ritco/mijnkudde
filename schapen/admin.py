@@ -6,4 +6,8 @@ from django.contrib import admin
 
 from .models import Schapen
 
-admin.site.register(Schapen)
+class SchapenAdmin(admin.ModelAdmin):
+    model = review
+    list_display = ('intern_nummer', 'geslacht')
+
+admin.site.register(Schapen, SchapenAdmin)
