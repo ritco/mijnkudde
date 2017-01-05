@@ -1,4 +1,4 @@
-# hier definiëren we alle URLs die beginnen met schapen/
+# hier definiëren we alle URLs die beginnen met schapen
 
 
 from django.conf.urls import url
