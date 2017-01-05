@@ -6,4 +6,4 @@ from django.contrib import admin
 
 from Schapen.models import *
 
-admin.site.register(Schapen)
+admin.site.register(schapen)
