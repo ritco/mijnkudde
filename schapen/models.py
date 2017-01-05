@@ -33,6 +33,5 @@ class Schapen(models.Model):
         limit_choices_to={'geslacht': 1},
         db_column='intern_nummer',
         )
-
-       def __unicode__(self):
-           return self.intern_nummer
+   def __unicode__(self):
+       return self.intern_nummer
