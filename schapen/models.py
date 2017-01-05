@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
 
 # Create your models here.
 
@@ -32,3 +33,6 @@ class Schapen(models.Model):
         limit_choices_to={'geslacht': 1},
         db_column='intern_nummer',
         )
+
+        def __unicode__(self):
+            return self.intern_nummer
