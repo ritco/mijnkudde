@@ -10,6 +10,6 @@ class Schapen(models.Model):
 
     intern_nummer = models.CharField(max_length=50)
     geslacht = models.IntegerField(choices=geslacht_keuzes)
-    geboortedatum = models.DateTimeField()
-    einddatum = models.DateTimeField()
+    geboortedatum = models.DateField(null=True, blank=True)
+    einddatum = models.DateField(null=True, blank=True)
     Sanitel = models.CharField(max_length=11)
