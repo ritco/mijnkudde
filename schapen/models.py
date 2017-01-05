@@ -35,4 +35,4 @@ class Schapen(models.Model):
         )
 
         def __unicode__(self):
-            return u'%s' % (self.intern_nummer)
+            return '%s' % (self.intern_nummer)
