@@ -22,7 +22,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^$', 'schapen.views.index'),
     url(r'^schapen/', include('schapen.urls', namespace='schapen')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', schapen.views.index),
+
 ]
