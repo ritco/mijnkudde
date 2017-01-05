@@ -35,4 +35,4 @@ class Schapen(models.Model):
         )
 
         def __unicode__(self):
-            return schapen.intern_nummer
+            return self.intern_nummer
