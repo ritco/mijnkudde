@@ -22,7 +22,7 @@ class Schapen(models.Model):
         null=True,
         related_name = 'ooi_lam',
         limit_choices_to={'geslacht': 2},
-        db_column='intern_nummer'
+        db_column='intern_nummer',
         )
     vader = models.ForeignKey(
         'self',
@@ -30,5 +30,5 @@ class Schapen(models.Model):
         null=True,
         related_name = 'ram_lam',
         limit_choices_to={'geslacht': 1},
-        db_column='intern_nummer'
+        db_column='intern_nummer',
         )
