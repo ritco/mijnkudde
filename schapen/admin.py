@@ -4,6 +4,6 @@ from django.contrib import admin
 
 # aanpassing is nodig om de schapen gegevens in de admin backend te zien
 
-from schapen.models import *
+from Schapen.models import *
 
 admin.site.register(Schapen)
