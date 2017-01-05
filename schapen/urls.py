@@ -1,4 +1,6 @@
-""" hier definiëren we alle URLs die beginnen met schapen """
+# hier definiëren we alle URLs die beginnen met schapen
+
+# coding=utf-8
 
 from django.conf.urls import url
 from . import views
