@@ -20,9 +20,10 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
+from schapen import views as schapen_views
 
 urlpatterns = [
-    url(r'^$', 'schapen.views.index'),
+    url(r'^$', schapen_views.index, name='index'),
     url(r'^schapen/', include('schapen.urls', namespace='schapen')),
     url(r'^admin/', admin.site.urls),
 
