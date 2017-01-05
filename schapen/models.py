@@ -16,3 +16,5 @@ class Schapen(models.Model):
     geboortedatum = models.DateField(null=True, blank=True)
     einddatum = models.DateField(null=True, blank=True)
     Sanitel = models.CharField(max_length=11)
+    moeder = models.ForeignKey('self', blank=True, null=True)
+    vader = models.ForeignKey('self', blank=True, null=True)
