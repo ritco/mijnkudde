@@ -34,4 +34,5 @@ class Schapen(models.Model):
         db_column='intern_nummer',
         )
 
-    
+       def __unicode__(self):
+        return self.intern_nummer
