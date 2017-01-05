@@ -10,7 +10,7 @@ from django.contrib import admin
 from schapen.models import *
 
 class SchapenAdmin(admin.ModelAdmin):
-    model = Review
+    model = Schapen
     list_display = ('intern_nummer', 'geslacht', 'geboortedatum', 'Sanitel')
     list_filter = ['geslacht']
 
