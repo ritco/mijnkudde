@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
     #voorbeeld: /
-    # url(r'^$', views.schapen_list, name = 'schapen_list'),
+    url(r'^$', schapen_views.bedrijf_index, name='index'),
     # voorbeeld: /schaap/internnr123
 
     # MOET NOG VERDER UITGEWERKT WORDEN!!!!

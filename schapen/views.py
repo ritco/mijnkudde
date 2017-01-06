@@ -11,7 +11,11 @@ from django.http import HttpResponse
 #    context = {'schapen_list':schapen_list}
 #    return render(request, 'schapen/schapen_list.html', context)
 
-def index(request):
+def bedrijf_index(request):
     schapen_overzicht = Schapen.objects.all()[:3]
     context = {'schapen_overzicht':schapen_overzicht}
     return render(request, 'schapen/index.html', context)
+
+
+def index(request):
+    return render(request, 'index.html')

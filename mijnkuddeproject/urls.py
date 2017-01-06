@@ -22,7 +22,7 @@ from schapen import views as schapen_views
 
 urlpatterns = [
     url(r'^$', schapen_views.index, name='index'),
-    url(r'^schapen/', include('schapen.urls', namespace='schapen')),
+    url(r'^bedrijf/', include('schapen.urls', namespace='schapen')),
     url(r'^admin/', admin.site.urls),
 
 ]
