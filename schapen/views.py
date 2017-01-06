@@ -11,7 +11,7 @@ from django.http import HttpResponse
 #    return render(request, 'schapen/schapen_list.html', context)
 
 def index(request):
-    schapen_overzicht = Schapen.objects.all()[:2]
+    schapen_overzicht = Schapen.objects.all()[:3]
     # for element in schapen_overzicht:
     #    output = ', '.join(element.intern_nummer)
 
