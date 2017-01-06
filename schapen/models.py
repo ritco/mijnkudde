@@ -32,4 +32,4 @@ class Schapen(models.Model):
         limit_choices_to={'geslacht': 1},
         )
     def __unicode__(self):
-        return self.intern_nummer
+        return unicode(self.intern_nummer)
