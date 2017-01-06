@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from Schapen.models import Schapen
+from schapen.models import Schapen
 from django.http import HttpResponse
 
 # def schapen_list(request):
