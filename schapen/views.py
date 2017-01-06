@@ -11,4 +11,6 @@ def schapen_list(request):
     return render(request, 'schapen/schapen_list.html', context)
 
 def index(request):
-    return HttpResponse('Dit is de startpagina van MijnKudde.be')
+    schapen_overzicht = Schapen.objects[:5]
+    output = ', '. join ([p.intern_nummer for p in schapen_overzicht])
+    return HttpResponse(output)
