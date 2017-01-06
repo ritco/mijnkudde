@@ -1,6 +1,6 @@
 # coding=utf-8
 
-# hier definiëren we alle URLs die beginnen met schapen
+# hier definiëren we alle URLs die beginnen met bedrijf (dit komt na login later)
 
 from django.conf.urls import url
 from . import views
