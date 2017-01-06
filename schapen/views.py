@@ -14,7 +14,7 @@ from django.http import HttpResponse
 def bedrijf_index(request):
     schapen_overzicht = Schapen.objects.all()[:3]
     context = {'schapen_overzicht':schapen_overzicht}
-    return render(request, 'schapen/index.html', context)
+    return render(request, 'bedrijf/index.html', context)
 
 
 def index(request):
