@@ -1,7 +1,7 @@
 {% if schapen_overzicht %}
   <ul>
     {% for beest in schapen_overzicht %}
-      <li>{{beest.intern_nummer}} is geboren op {{str(beest.geboortedatum)}}</li>
+      <li>{{beest.intern_nummer}} is geboren op {{beest.geboortedatum}}</li>
     {% endfor %}
   </ul>
 {% else %}
