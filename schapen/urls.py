@@ -4,6 +4,7 @@
 
 from django.conf.urls import url
 from . import views
+from schapen import views as schapen_views
 
 urlpatterns = [
     #voorbeeld: /
