@@ -16,6 +16,6 @@ def index(request):
     #    output = ', '.join(element.intern_nummer)
 
 
-    output = ', '. join (p.intern_nummer for p in schapen_overzicht)
+    output = ', '. join (p.geboortedatum for p in schapen_overzicht)
     # output = "test van Rik"
     return HttpResponse(output)
