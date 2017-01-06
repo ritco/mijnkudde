@@ -13,9 +13,5 @@ from django.http import HttpResponse
 
 def index(request):
     schapen_overzicht = Schapen.objects.all()[:3]
-
-    # template = loader.get_template('schapen/index.html')
     context = {'schapen_overzicht':schapen_overzicht}
-
-    # output = ', '. join (p.intern_nummer for p in schapen_overzicht)
     return render(request, 'schapen/index.html', context)

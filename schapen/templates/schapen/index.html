@@ -1,9 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Mijn Kudde.be - Welkom{% endblock %}
+
+{% block content %}
+<h1>MijnKudde.be</h1>
+
 {% if schapen_overzicht %}
   <ul>
     {% for beest in schapen_overzicht %}
-      <li>{{beest.intern_nummer}} is geboren op {{beest.geboortedatum}}</li>
+      <li><b>{{beest.intern_nummer}}</b> is geboren op {{beest.geboortedatum}}</li>
     {% endfor %}
   </ul>
 {% else %}
   <p>Geen schapen te vinden!!</p>
 {% endif %}
+
+{% endblock %}
