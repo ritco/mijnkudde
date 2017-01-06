@@ -11,7 +11,7 @@ from django.http import HttpResponse
 #    return render(request, 'schapen/schapen_list.html', context)
 
 def index(request):
-    schapen_overzicht[] = Schapen.objects.get()[:5]
-    output = ', '. join (str([p.intern_nummer for p in schapen_overzicht])
+    schapen_overzicht = Schapen.objects.fetchone()
+    # output = ', '. join (str([p.intern_nummer for p in schapen_overzicht])
     # output = "test van Rik"
     return HttpResponse(output)
