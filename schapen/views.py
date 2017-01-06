@@ -6,16 +6,13 @@ from django.shortcuts import render
 from schapen.models import Schapen
 from django.http import HttpResponse
 
-# def schapen_list(request):
-#    schapen_list = Schapen.objects.order_by('-intern_nummer')
-#    context = {'schapen_list':schapen_list}
-#    return render(request, 'schapen/schapen_list.html', context)
+# view voor basis pagina website, login vetrekt van hier
+def index(request):
+    return render(request, 'index.html')
+
+# view na login, alles met suffix bedrijf
 
 def bedrijf_index(request):
     schapen_overzicht = Schapen.objects.all()[:3]
     context = {'schapen_overzicht':schapen_overzicht}
     return render(request, 'bedrijf/index.html', context)
-
-
-def index(request):
-    return render(request, 'index.html')
