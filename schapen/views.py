@@ -12,7 +12,7 @@ from django.http import HttpResponse
 
 def index(request):
     schapen_overzicht = Schapen.objects.all()[:1]
-    for elementen in schapen_overzicht:
+    for element in schapen_overzicht:
         output = ', '.join(element.intern_nummer)
 
 
