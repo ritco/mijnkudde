@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import loader, RequestContext
+from django.template import loader, RequestContext
 
 # Create your views here.
 
