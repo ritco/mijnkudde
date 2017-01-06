@@ -31,5 +31,5 @@ class Schapen(models.Model):
         related_name = 'ram_lam',
         limit_choices_to={'geslacht': 1},
         )
-    def __str__(self):
+    def __unicode__(self):
         return self.intern_nummer

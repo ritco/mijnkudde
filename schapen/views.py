@@ -12,6 +12,6 @@ from django.http import HttpResponse
 
 def index(request):
     schapen_overzicht = Schapen.objects.all()[:5]
-    output = ', '. join ([p.intern_nummer for p in schapen_overzicht])
+    output = ', '. join (str([p.intern_nummer for p in schapen_overzicht])
     # output = "test van Rik"
     return HttpResponse(output)
