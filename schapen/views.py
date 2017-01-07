@@ -14,6 +14,6 @@ import datetime
 
 def bedrijf_index(request):
     today = datetime.datetime.today()
-    schapen_overzicht = Schapen.objects.filter(einddatum__lt = today , einddatum = none)
+    schapen_overzicht = Schapen.objects.filter(einddatum__lt = today)
     context = {'schapen_overzicht':schapen_overzicht}
     return render(request, 'bedrijf/index.html', context)
