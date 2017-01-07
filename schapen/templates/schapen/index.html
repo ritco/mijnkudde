@@ -6,11 +6,27 @@
 <h1>MijnKudde.be</h1>
 
 {% if schapen_overzicht %}
-  <ul>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Intern nummer</th>
+        <th>Geboortedatum</th>
+      </tr>
+    </thead>
+    <tbody>
     {% for beest in schapen_overzicht %}
-      <li><b>{{beest.intern_nummer}}</b> is geboren op {{beest.geboortedatum}}</li>
+      <tr>
+        <td>{{beest.intern_nummer}}</td>
+        <td>{{beest.geboortedatum}}</td>
+      </tr>
     {% endfor %}
-  </ul>
+    </tbody>
+  </table>
+</div>
+
 {% else %}
   <p>Geen schapen te vinden!!</p>
 {% endif %}
