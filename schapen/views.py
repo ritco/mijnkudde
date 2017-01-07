@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from schapen.models import Schapen
-from django.db.models import Q
+from django.db.models import F
 from django.http import HttpResponse
 import datetime
 
@@ -14,6 +14,6 @@ import datetime
 
 def bedrijf_index(request):
     today = datetime.datetime.today()
-    schapen_overzicht = Schapen.objects.filter(Q(einddatum < today)|Q(einddatum = None))
+    schapen_overzicht = Schapen.objects.filter((F('einddatum') < today)|(F('einddatum') = None))
     context = {'schapen_overzicht':schapen_overzicht}
     return render(request, 'bedrijf/index.html', context)
