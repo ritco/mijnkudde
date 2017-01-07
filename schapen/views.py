@@ -6,6 +6,7 @@ from django.shortcuts import render
 from schapen.models import Schapen
 from django.db.models import Q
 from django.http import HttpResponse
+import datetime
 
 
 
