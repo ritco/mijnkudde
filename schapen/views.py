@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from schapen.models import Schapen, Q
+from schapen.models import Schapen
+from django.db.models import Q
 from django.http import HttpResponse
 
 
