@@ -15,6 +15,3 @@ urlpatterns = [
 
 
 ]
-
-
-url(r'^$', schapen_views.bedrijf_index, name='index'),
