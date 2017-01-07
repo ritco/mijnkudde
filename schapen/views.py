@@ -6,9 +6,7 @@ from django.shortcuts import render
 from schapen.models import Schapen
 from django.http import HttpResponse
 
-# view voor basis pagina website, login vetrekt van hier
-def index(request):
-    return render(request, 'index.html')
+
 
 # view na login, alles met suffix bedrijf
 
