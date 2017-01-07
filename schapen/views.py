@@ -12,6 +12,6 @@ from django.http import HttpResponse
 
 def bedrijf_index(request):
     today = datetime.datetime.today()
-    schapen_overzicht = Schapen.objects.filter(Q(einddatum=today)|Q(einddatum=None))
+    schapen_overzicht = Schapen.objects.filter(Q(einddatum < today)|Q(einddatum = None))
     context = {'schapen_overzicht':schapen_overzicht}
     return render(request, 'bedrijf/index.html', context)
