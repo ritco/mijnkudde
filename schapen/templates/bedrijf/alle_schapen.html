@@ -1,0 +1,35 @@
+{% extends "bedrijf/base.html" %}
+
+{% block title %}Mijn Kudde.be - Welkom{% endblock %}
+
+{% block content %}
+<h1>Lijst van aanwezig schapen</h1>
+
+{% if schapen_overzicht %}
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Intern nummer</th>
+        <th>Geboortedatum</th>
+        <th>Geslacht</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for beest in schapen_overzicht %}
+      <tr>
+        <td>{{beest.intern_nummer}}</td>
+        <td>{{beest.geboortedatum}}</td>
+        <td>{{beest.geslacht}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% else %}
+  <p>Geen schapen te vinden!!</p>
+{% endif %}
+
+{% endblock %}

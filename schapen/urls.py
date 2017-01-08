@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^$', schapen_views.bedrijf_index),
     # voorbeeld: /schaap/internnr123
     url('aanwezige_schapen.html', schapen_views.bedrijf_aanwezige_schapen),
-    # MOET NOG VERDER UITGEWERKT WORDEN!!!!
+    url('alle_schapen.html', schapen_views.bedrijf_alle_schapen),
 
 
 ]
