@@ -8,9 +8,9 @@ from schapen import views as schapen_views
 
 urlpatterns = [
     #voorbeeld: /
-    url(r'^$', schapen_views.bedrijf_index, name='schapen'),
+    url(r'^$', schapen_views.bedrijf_index),
     # voorbeeld: /schaap/internnr123
-    url(r'aanwezige_schapen^$', schapen_views.bedrijf_aanwezige_schapen, name='schapen'),
+    url('aanwezige_schapen.html', schapen_views.bedrijf_aanwezige_schapen),
     # MOET NOG VERDER UITGEWERKT WORDEN!!!!
 
 
