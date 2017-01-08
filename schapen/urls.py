@@ -10,7 +10,7 @@ urlpatterns = [
     #voorbeeld: /
     url(r'^$', schapen_views.bedrijf_index, name='schapen'),
     # voorbeeld: /schaap/internnr123
-
+    url(r'/aanwezige_schapen^$', schapen_views.bedrijf_aanwezige_schapen, name='schapen'),
     # MOET NOG VERDER UITGEWERKT WORDEN!!!!
 
 
