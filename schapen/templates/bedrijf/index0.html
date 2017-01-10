@@ -1,0 +1,18 @@
+{% extends "bedrijf/base.html" %}
+
+{% block title %}Mijn Kudde.be - Een nieuw schaap toevoegen{% endblock %}
+
+
+
+{% block content %}
+<h1>Een nieuw schaap toevoegen</h1>
+
+
+<form action="{% url 'reviews:add_review' wine.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add" />
+</form>
+
+
+{% endblock %}

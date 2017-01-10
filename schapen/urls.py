@@ -12,6 +12,7 @@ urlpatterns = [
     # voorbeeld: /schaap/internnr123
     url('aanwezige_schapen.html', schapen_views.bedrijf_aanwezige_schapen),
     url('alle_schapen.html', schapen_views.bedrijf_alle_schapen),
+    url('schaap_toevoegen.html', schapen_views.bedrijf_schaap_toevoegen),
 
 
 ]

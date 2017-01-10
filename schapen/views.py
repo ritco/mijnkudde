@@ -29,3 +29,8 @@ def bedrijf_alle_schapen(request):
     schapen_overzicht = Schapen.objects.order_by('intern_nummer')
     context = {'schapen_overzicht':schapen_overzicht}
     return render(request, 'bedrijf/aanwezige_schapen.html', context)
+
+def bedrijf_schaap_toevoegen(request):
+    #schapen_overzicht = Schapen.objects.order_by('intern_nummer')
+    #context = {'schapen_overzicht':schapen_overzicht}
+    return render(request, 'bedrijf/schaap_toevoegen.html', context)
