@@ -7,4 +7,4 @@ from django.http import HttpResponse
 
 # view voor basis pagina website, login vetrekt van hier
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'cms/index.html')
