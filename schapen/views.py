@@ -4,6 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from schapen.models import Schapen
+from schapen.forms import AddSchapen
 from django.db.models import Q
 from django.http import HttpResponse
 import datetime
@@ -31,6 +32,5 @@ def bedrijf_alle_schapen(request):
     return render(request, 'bedrijf/aanwezige_schapen.html', context)
 
 def bedrijf_schaap_toevoegen(request):
-    #schapen_overzicht = Schapen.objects.order_by('intern_nummer')
-    #context = {'schapen_overzicht':schapen_overzicht}
-    return render(request, 'bedrijf/schaap_toevoegen.html', context)
+    form = AddSchapen
+    return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
