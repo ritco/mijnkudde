@@ -3,8 +3,7 @@
 {% block title %}Mijn Kudde.be - Lijst van alle schapen{% endblock %}
 
 {% block content %}
-<h1>Lijst van alle schapen</h1>
-<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+<h1>Test van Rik</h1>
 
 {% if schapen_overzicht %}
 
@@ -32,5 +31,7 @@
 {% else %}
   <p>Geen schapen te vinden!!</p>
 {% endif %}
+
+<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
 {% endblock %}
