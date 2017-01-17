@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1>Test van Rik</h1>
+<p><a href="{% url 'schapen:bedrijf_schaap_toevoegen' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></p>
 
 {% if schapen_overzicht %}
 
@@ -32,6 +33,6 @@
   <p>Geen schapen te vinden!!</p>
 {% endif %}
 
-<a href="{% url 'schapen:bedrijf_schaap_toevoegen' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
 
 {% endblock %}
