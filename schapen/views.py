@@ -32,5 +32,18 @@ def bedrijf_alle_schapen(request):
     return render(request, 'bedrijf/alle_schapen.html', context)
 
 def bedrijf_schaap_toevoegen(request):
-    form = AddSchapen
+    if request.method == "POST"
+        form = AddSchapen(request.POST)
+        if form.is_valid():
+            schaap = form.save(commit=False)
+            schaap.intern_nummer = request.intern_nummer
+            schaap.geslacht = request.geslacht
+            schaap.geboortedatum = request.geboortedatum
+            schaap.Sanitel = request.Sanitel
+            schaap.vader = request.vader
+            schaap.moeder = request.moeder
+            schaap.save()
+            return redirect('bedrijf_alle_schapen')
+    else:
+        form = AddSchapen()
     return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
