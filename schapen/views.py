@@ -8,6 +8,7 @@ from schapen.forms import AddSchapen
 from django.db.models import Q
 from django.http import HttpResponse
 import datetime
+import forms
 
 
 
@@ -35,13 +36,7 @@ def bedrijf_schaap_toevoegen(request):
     if request.method == "POST":
         form = AddSchapen(request.POST)
         if form.is_valid():
-            intern_nummer = form.cleaned_data['intern_nummer']
-            geslacht = form.cleaned_data['geslacht']
-            geboortedatum = form.cleaned_data['geboortedatum']
-            Sanitel = form.cleaned_data['Sanitel']
-            vader = form.cleaned_data['vader']
-            moeder = form.cleaned_data['moeder']
-            schaap = m.Schapen.objects.create(intern_nummer=intern_nummer, geslacht=geslacht, geboortedatum=geboortedatum, Sanitel=Sanitel, vader=vader, moeder=moeder)
+            form.save()
             return redirect('bedrijf_alle_schapen')
     else:
         form = AddSchapen()
