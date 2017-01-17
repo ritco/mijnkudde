@@ -101,12 +101,11 @@ body {
   border-radius: 50%;
 }
 
-/* toevoegen gypicon dinges
-{% static 'fonts/' %}
-*/
+.glyphicon{
+  padding-right: 5px;
+}
 
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('{% static 'fonts/' %}glyphicons-halflings-regular.eot');
-    src: url('{% static 'fonts/' %}glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('{% static 'fonts/' %}glyphicons-halflings-regular.woff') format('woff'), url('{% static 'fonts/' %}glyphicons-halflings-regular.ttf') format('truetype'), url('{% static 'fonts/' %}glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+.btn-primary a{
+  color: #fff;
+
 }
