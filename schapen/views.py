@@ -35,14 +35,14 @@ def bedrijf_schaap_toevoegen(request):
     if request.method == "POST"
         form = AddSchapen(request.POST)
         if form.is_valid():
-            schaap = form.save(commit=False)
-            schaap.intern_nummer = request.intern_nummer
-            schaap.geslacht = request.geslacht
-            schaap.geboortedatum = request.geboortedatum
-            schaap.Sanitel = request.Sanitel
-            schaap.vader = request.vader
-            schaap.moeder = request.moeder
-            schaap.save()
+            Schapen = form.save(commit=False)
+            Schapen.intern_nummer = request.intern_nummer
+            Schapen.geslacht = request.geslacht
+            Schapen.geboortedatum = request.geboortedatum
+            Schapen.Sanitel = request.Sanitel
+            Schapen.vader = request.vader
+            Schapen.moeder = request.moeder
+            Schapen.save()
             return redirect('bedrijf_alle_schapen')
     else:
         form = AddSchapen()
