@@ -102,10 +102,5 @@ body {
 }
 
 .glyphicon {
-  padding-right: 5px;
-}
-
-.knoptekst {
-  color: #fff;
-  padding-left: 10px;
+  margin-right: 5px;
 }
