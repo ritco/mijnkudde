@@ -32,7 +32,7 @@ def bedrijf_alle_schapen(request):
     return render(request, 'bedrijf/alle_schapen.html', context)
 
 def bedrijf_schaap_toevoegen(request):
-    if request.method == "POST"
+    if request.method == "POST":
         form = AddSchapen(request.POST)
         if form.is_valid():
             Schapen = form.save(commit=False)
