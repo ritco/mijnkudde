@@ -7,6 +7,7 @@ from schapen.models import Schapen
 from schapen.forms import AddSchapen
 from django.db.models import Q
 from django.http import HttpResponse
+from django.shortcuts import redirect
 import datetime
 import forms
 
