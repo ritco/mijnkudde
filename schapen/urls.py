@@ -13,7 +13,7 @@ urlpatterns = [
     url(r'^$', schapen_views.bedrijf_index),
     # voorbeeld: /schaap/internnr123
     url('aanwezige_schapen/$', schapen_views.bedrijf_aanwezige_schapen, name='bedrijf_aanwezige_schapen'),
-    url('alle_schapen/$', schapen_views.bedrijf_alle_schapen, name='bedrijf_alle_schapen'),
+    url('alle_schapen/$', schapen_views.bedrijf_alle_schapen, name='schapen:bedrijf_alle_schapen'),
     url('schaap_toevoegen/$', schapen_views.bedrijf_schaap_toevoegen, name='bedrijf_schaap_toevoegen'),
 
 
