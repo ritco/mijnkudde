@@ -38,7 +38,8 @@ def bedrijf_schaap_toevoegen(request):
         form = AddSchapen(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('bedrijf_alle_schapen')
+            context = {'schapen_overzicht':schapen_overzicht}
+            return render(request, 'bedrijf/alle_schapen.html', context)
     else:
         form = AddSchapen()
         return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
