@@ -38,6 +38,7 @@ def bedrijf_schaap_toevoegen(request):
         form = AddSchapen(request.POST)
         if form.is_valid():
             form.save()
+            schapen_overzicht = Schapen.objects.order_by('intern_nummer')
             context = {'schapen_overzicht':schapen_overzicht}
             return render(request, 'bedrijf/alle_schapen.html', context)
     else:
