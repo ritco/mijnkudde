@@ -41,4 +41,4 @@ def bedrijf_schaap_toevoegen(request):
             return redirect('bedrijf_alle_schapen')
     else:
         form = AddSchapen()
-    return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
+        return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
