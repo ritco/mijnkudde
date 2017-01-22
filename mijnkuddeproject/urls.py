@@ -21,8 +21,9 @@ from django.contrib import admin
 from schapen import views as schapen_views
 
 urlpatterns = [
-    url(r'^$', include('cms.urls', namespace='cms')),
+
     url(r'^bedrijf/', include('schapen.urls', namespace='schapen')),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', include('cms.urls', namespace='cms')),
 
 ]
