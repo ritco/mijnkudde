@@ -19,7 +19,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from schapen import views as schapen_views
-from djano.contrib.auth import views as auth_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 
