@@ -109,6 +109,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# login redirect
+LOGIN_REDIRECT_URL = 'bedrijf_index'
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
