@@ -34,7 +34,7 @@ class Schapen(models.Model):
         related_name = 'ram_lam',
         limit_choices_to={'geslacht': 1},
         )
-    user_name = models.CharField(max_length=100)
+    user_name = models.CharField(max_length=100, null=True, blank=True)
     pub_datum = models.DateField(null=True, blank=True)
 
 
