@@ -10,5 +10,5 @@ class AddSchapen(forms.ModelForm):
         model = Schapen
         fields = ('intern_nummer', 'geslacht', 'geboortedatum', 'Sanitel', 'moeder', 'vader')
         widgets = {
-            'geboortedatum': forms.DateField(format="%d/%m/%Y"),
+            'geboortedatum': forms.DateField(),
         }
