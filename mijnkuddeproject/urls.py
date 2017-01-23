@@ -19,11 +19,14 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from schapen import views as schapen_views
+from djano.contrib.auth import views as auth_views
 
 urlpatterns = [
 
     url(r'^bedrijf/', include('schapen.urls', namespace='schapen')),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/$', auth_views.login, name = 'login'),
+    url(r'^logout/$', auth_views.logout, name = 'logout'),
     url(r'^$', include('cms.urls', namespace='cms')),
 
 ]
