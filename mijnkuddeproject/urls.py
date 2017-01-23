@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^bedrijf/', include('schapen.urls', namespace='schapen')),
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', auth_views.login, name = 'login'),
-    url(r'^logout/$', auth_views.logout, {'template_name': 'logged_out.html'}, name = 'logout'),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'bedrijf/logged_out.html'}, name = 'logout'),
     url(r'^$', include('cms.urls', namespace='cms')),
 
 ]
