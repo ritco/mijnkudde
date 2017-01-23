@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # login redirect
-LOGIN_REDIRECT_URL = 'bedrijf_index'
+LOGIN_REDIRECT_URL = 'schapen:bedrijf_index'
 
 
 
