@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import extras
 from .models import Schapen
+from django.forms.fields import DateField
 
 
 class AddSchapen(forms.ModelForm):
@@ -9,5 +10,5 @@ class AddSchapen(forms.ModelForm):
         model = Schapen
         fields = ('intern_nummer', 'geslacht', 'geboortedatum', 'Sanitel', 'moeder', 'vader')
         widgets = {
-            'geboortedatum': forms.DateField(format='%d/%m/%Y'),         
+            'geboortedatum': forms.DateField(format='%d/%m/%Y'),
         }
