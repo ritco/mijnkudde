@@ -51,11 +51,3 @@ def bedrijf_schaap_toevoegen(request):
     else:
         form = AddSchapen()
         return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
-
-
-
-
-        if form.is_valid():
-    stock = form.save(commit=False)
-    stock.user = request.user
-    stock.save()
