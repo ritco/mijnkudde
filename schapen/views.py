@@ -40,10 +40,10 @@ def bedrijf_schaap_toevoegen(request):
     if request.method == "POST":
         form = AddSchapen(request.POST)
         if form.is_valid():
-            form.user_name = request.user.user_name
-            nu = datetie.datetime.now()
-            form.pub_datum = nu
-            form.save()
+            formulier = form.save(commit=False)
+            formulier.user_name = request.user
+            formulier.pub_datum = datetime.datetime.now()
+            formulier.save()
             #schapen_overzicht = Schapen.objects.order_by('intern_nummer')
             #context = {'schapen_overzicht':schapen_overzicht}
             #return render(request, 'bedrijf/alle_schapen.html', context)
@@ -51,3 +51,11 @@ def bedrijf_schaap_toevoegen(request):
     else:
         form = AddSchapen()
         return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
+
+
+
+
+        if form.is_valid():
+    stock = form.save(commit=False)
+    stock.user = request.user
+    stock.save()
