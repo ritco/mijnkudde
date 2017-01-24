@@ -41,8 +41,8 @@ def bedrijf_schaap_toevoegen(request):
         form = AddSchapen(request.POST)
         if form.is_valid():
             form.user_name = request.user.user_name
-            form.pub_datum = datetie.datetime.now()
-
+            nu = datetie.datetime.now()
+            form.pub_datum = nu
             form.save()
             #schapen_overzicht = Schapen.objects.order_by('intern_nummer')
             #context = {'schapen_overzicht':schapen_overzicht}
