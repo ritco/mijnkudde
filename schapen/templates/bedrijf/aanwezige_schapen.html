@@ -23,7 +23,7 @@
     <tbody>
     {% for beest in schapen_overzicht %}
       <tr>
-        <td>{{beest.intern_nummer}}</td>
+        <td><a href="{% url 'schapen:bedrijf_schaap_detail' beest.id %}">{{beest.intern_nummer}}</a></td>
         <td>{{beest.geboortedatum}}</td>
         <td>{{beest.get_geslacht_display}}</td>
       </tr>
