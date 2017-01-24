@@ -19,21 +19,27 @@ from django.core.urlresolvers import reverse
 @login_required
 def bedrijf_index(request):
     today = datetime.datetime.today()
+    huidige_gebruiker = request.user
     schapen_overzicht = Schapen.objects.filter(Q(einddatum__gt = today) | Q(einddatum__isnull = True )).order_by('intern_nummer')
-    context = {'schapen_overzicht':schapen_overzicht}
+    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user_name = huidige_gebruiker )
+    context = {'schapen_overzicht':schapen_overzicht_pergebruiker}
     return render(request, 'bedrijf/index.html', context)
 
 @login_required
 def bedrijf_aanwezige_schapen(request):
     today = datetime.datetime.today()
+    huidige_gebruiker = request.user
     schapen_overzicht = Schapen.objects.filter(Q(einddatum__gt = today) | Q(einddatum__isnull = True )).order_by('intern_nummer')
-    context = {'schapen_overzicht':schapen_overzicht}
+    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user_name = huidige_gebruiker )
+    context = {'schapen_overzicht':schapen_overzicht_pergebruiker}
     return render(request, 'bedrijf/aanwezige_schapen.html', context)
 
 @login_required
 def bedrijf_alle_schapen(request):
+    huidige_gebruiker = request.user
     schapen_overzicht = Schapen.objects.order_by('intern_nummer')
-    context = {'schapen_overzicht':schapen_overzicht}
+    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user_name = huidige_gebruiker )
+    context = {'schapen_overzicht':schapen_overzicht_pergebruiker}
     return render(request, 'bedrijf/alle_schapen.html', context)
 
 @login_required
