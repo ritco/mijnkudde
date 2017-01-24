@@ -1,0 +1,14 @@
+{% extends "bedrijf/base.html" %}
+
+{% block title %}Mijn Kudde.be - Detail van schaap {{ schapen.intern_nummer }}{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-9"><h1>Detail van schaap {{ schapen.intern_nummer }}</h1></div>
+<div class="col-sm3"></div>
+</div>
+{{ schapen.intern_nummer }}
+
+{{ schapen.geslacht }}
+
+{% endblock %}

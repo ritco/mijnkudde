@@ -7,7 +7,7 @@ from schapen.models import Schapen
 from schapen.forms import AddSchapen
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 import datetime
 import forms
 from django.contrib.auth.decorators import login_required
@@ -58,3 +58,9 @@ def bedrijf_schaap_toevoegen(request):
     else:
         form = AddSchapen()
         return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
+
+@login_required
+def bedrijf_schaap_detail(request, id):
+    schaap = get_object_or_404(Schapen, pk=id)
+    form = AddSchapen()
+    return render(request, 'bedrijf/schaap_detail.html', {'schapen': schaap, 'form': form})

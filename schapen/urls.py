@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^aanwezige_schapen', schapen_views.bedrijf_aanwezige_schapen, name = 'bedrijf_aanwezige_schapen'),
     url(r'^alle_schapen', schapen_views.bedrijf_alle_schapen, name = 'bedrijf_alle_schapen'),
     url(r'^schaap_toevoegen', schapen_views.bedrijf_schaap_toevoegen, name = 'bedrijf_schaap_toevoegen'),
+    url(r'^schaap/(?P<id>[0-9]+)/$', schapen_views.bedrijf_schaap_detail, name='bedrijf_schaap_detail'),
     url(r'^$', schapen_views.bedrijf_index, name='bedrijf_index'),
 
 
