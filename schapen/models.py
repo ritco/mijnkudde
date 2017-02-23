@@ -5,8 +5,9 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.conf import settings
-
+from django.db.models import Q
 from django.utils.encoding import python_2_unicode_compatible
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -25,7 +26,7 @@ class Schapen(models.Model):
         blank=True,
         null=True,
         related_name = 'ooi_lam',
-        limit_choices_to={'geslacht': 2},
+        limit_choices_to = Q(geslacht="2") & Q(user_name=request.user),
         )
     vader = models.ForeignKey(
         'self',
@@ -34,7 +35,7 @@ class Schapen(models.Model):
         related_name = 'ram_lam',
         limit_choices_to={'geslacht': 1},
         )
-    user_name = models.CharField(max_length=100, null=True, blank=True)
+    user_name = models.ForeignKey(User)
     pub_datum = models.DateField(null=True, blank=True)
 
 
