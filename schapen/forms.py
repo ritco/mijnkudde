@@ -7,11 +7,11 @@ from django.db.models import Q
 
 class AddSchapen(forms.Form):
 
-   class Meta:
-        model = Schapen
-        exclude = ('owner', )
-
     def __init__(self, *args, **kwargs):
           super(AddSchapen, self).__init__(*args, **kwargs)
           self.fields['moeder'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner=request.user).filter(geslacht=2)])
           self.fields['vader'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner=request.user).filter(geslacht=1)])
+
+    class Meta:
+        model = Schapen
+        exclude = ('owner', )
