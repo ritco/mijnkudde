@@ -24,10 +24,12 @@ class Schapen(models.Model):
     moeder = models.CharField(
         blank=True,
         null=True,
+        max_length=50
         )
     vader = models.CharField(
         blank=True,
         null=True,
+        max_length=50
         )
     owner = models.ForeignKey(User, default=1, null=True)
     pub_datum = models.DateField(null=True, blank=True)
