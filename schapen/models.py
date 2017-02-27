@@ -35,7 +35,7 @@ class Schapen(models.Model):
         related_name = 'ram_lam',
         limit_choices_to={'geslacht': 1},
         )
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, default=1, null=True)
     pub_datum = models.DateField(null=True, blank=True)
 
 
