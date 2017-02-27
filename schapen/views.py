@@ -21,7 +21,7 @@ def bedrijf_index(request):
     today = datetime.datetime.today()
     huidige_gebruiker = request.user
     schapen_overzicht = Schapen.objects.filter(Q(einddatum__gt = today) | Q(einddatum__isnull = True )).order_by('intern_nummer')
-    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user_name = huidige_gebruiker )
+    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user = huidige_gebruiker )
     context = {'schapen_overzicht':schapen_overzicht_pergebruiker}
     return render(request, 'bedrijf/index.html', context)
 
@@ -30,7 +30,7 @@ def bedrijf_aanwezige_schapen(request):
     today = datetime.datetime.today()
     huidige_gebruiker = request.user
     schapen_overzicht = Schapen.objects.filter(Q(einddatum__gt = today) | Q(einddatum__isnull = True )).order_by('intern_nummer')
-    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user_name = huidige_gebruiker )
+    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user = huidige_gebruiker )
     context = {'schapen_overzicht':schapen_overzicht_pergebruiker}
     return render(request, 'bedrijf/aanwezige_schapen.html', context)
 
@@ -38,7 +38,7 @@ def bedrijf_aanwezige_schapen(request):
 def bedrijf_alle_schapen(request):
     huidige_gebruiker = request.user
     schapen_overzicht = Schapen.objects.order_by('intern_nummer')
-    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user_name = huidige_gebruiker )
+    schapen_overzicht_pergebruiker = schapen_overzicht.filter(user = huidige_gebruiker )
     context = {'schapen_overzicht':schapen_overzicht_pergebruiker}
     return render(request, 'bedrijf/alle_schapen.html', context)
 
@@ -48,7 +48,7 @@ def bedrijf_schaap_toevoegen(request):
         form = AddSchapen(request.POST)
         if form.is_valid():
             formulier = form.save(commit=False)
-            formulier.user_name = request.user
+            formulier.user = request.user
             formulier.pub_datum = datetime.datetime.now()
             formulier.save()
             #schapen_overzicht = Schapen.objects.order_by('intern_nummer')
