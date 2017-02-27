@@ -10,8 +10,8 @@ class AddSchapen(forms.Form):
 
     def __init__(self, *args, **kwargs):
           super(AddSchapen, self).__init__(*args, **kwargs)
-          self.fields['moeder'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner=request.user).filter(geslacht=2)])
-          self.fields['vader'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner=request.user).filter(geslacht=1)])
+          self.fields['moeder'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner=self.request.user).filter(geslacht=2)])
+          self.fields['vader'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner=self.request.user).filter(geslacht=1)])
 
     class Meta:
         model = Schapen
