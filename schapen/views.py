@@ -56,7 +56,7 @@ def bedrijf_schaap_toevoegen(request):
             #return render(request, 'bedrijf/alle_schapen.html', context)
             return HttpResponseRedirect(reverse('schapen:bedrijf_schaap_toevoegen'))
     else:
-        form = AddSchapen.objects.filter(user=request.user)
+        form = AddSchapen.filter(user=request.user)
         return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
 
 @login_required
