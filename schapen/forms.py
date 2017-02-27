@@ -4,8 +4,12 @@ from .models import Schapen
 from django.forms.fields import DateField
 
 
-class AddSchapen(forms.ModelForm):
+#class AddSchapen(forms.ModelForm):
+#
+#    class Meta:
+#        model = Schapen
+#        exclude = ('user', )
 
-    class Meta:
-        model = Schapen
-        exclude = ('user', )
+
+class AddSchapen(CustomModelForm):
+    pass 
