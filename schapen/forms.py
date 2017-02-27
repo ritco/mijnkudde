@@ -6,9 +6,6 @@ from django.forms.fields import DateField
 
 class AddSchapen(forms.ModelForm):
 
-
-
-
     class Meta:
         model = Schapen
-        exclude = ('user_name', )
+        exclude = ('user', )
