@@ -26,7 +26,7 @@ class Schapen(models.Model):
         blank=True,
         null=True,
         related_name = 'ooi_lam',
-        limit_choices_to = Q(geslacht="2") & Q(user_name=request.user),
+        limit_choices_to = {'geslacht': 2},
         )
     vader = models.ForeignKey(
         'self',
@@ -35,7 +35,7 @@ class Schapen(models.Model):
         related_name = 'ram_lam',
         limit_choices_to={'geslacht': 1},
         )
-    user_name = models.ForeignKey(User)
+    user = models.ForeignKey(User)
     pub_datum = models.DateField(null=True, blank=True)
 
 
