@@ -7,11 +7,11 @@ from django.contrib.auth.models import User
 
 
 
-class AddSchapen(forms.Form):
+class AddSchapen(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
           super(AddSchapen, self).__init__(*args, **kwargs)
-          gebruiker = self.request.user
+          gebruiker = request.user
           self.fields['moeder'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner = gebruiker).filter(geslacht=2)])
           self.fields['vader'] = forms.ChoiceField(choices=[ (o.id, str(o)) for o in Schapen.objects.filter(owner = gebruiker).filter(geslacht=1)])
 
