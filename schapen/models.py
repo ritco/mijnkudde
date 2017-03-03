@@ -13,6 +13,8 @@ from schapen.middleware.global_request import get_request
 class SchapenManager(models.Manager):
     def get_queryset(self):
         request = get_request()
+        if request:
+            print(request.user)
         if request is not None and not request.user.is_superuser:
             return super(SchapenManager, self)\
                 .get_queryset().filter(owner=request.user)
