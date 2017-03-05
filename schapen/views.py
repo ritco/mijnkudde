@@ -52,11 +52,11 @@ def bedrijf_schaap_toevoegen(request):
             formulier.save()
             #schapen_overzicht = Schapen.objects.order_by('intern_nummer')
             #context = {'schapen_overzicht':schapen_overzicht}
-            return render(request, 'bedrijf/alle_schapen.html', context)
-            # return HttpResponseRedirect(reverse('schapen:bedrijf_schaap_toevoegen'))
+            #return render(request, 'bedrijf/alle_schapen.html', context)
+            return redirect(reverse('schapen:bedrijf_schaap_toevoegen'))
     else:
         form = AddSchapen(request.user)
-        return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
+    return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
 
 @login_required
 def bedrijf_schaap_detail(request, id):
