@@ -5,20 +5,16 @@ from django.forms.fields import DateField
 from django.db.models import Q
 from django.contrib.auth.models import User
 
+from .middleware.global_request import get_request
 
 
 class AddSchapen(forms.ModelForm):
 
-    def __init__(self, user, *args, **kwargs):
-          super(AddSchapen, self).__init__( *args, **kwargs)
-          self.fields['moeder'] = forms.ChoiceField(
-          choices=[(o.id, str(o)) for o in Schapen.objects.filter(owner=user).filter(geslacht=2)],
-          required=False
-          )
-          self.fields['vader'] = forms.ChoiceField(
-          choices=[(o.id, str(o)) for o in Schapen.objects.filter(owner=user).filter(geslacht=1)],
-          required=False
-          )
+    def __init__(self, *args, **kwargs):
+        super(AddSchapen, self).__init__( *args, **kwargs)
+        user = get_request().user
+        self.fields['moeder'].queryset = Schapen.objects.filter(owner=user, geslacht=2)
+        self.fields['vader'].queryset = Schapen.objects.filter(owner=user, geslacht=1)
 
     class Meta:
         model = Schapen
