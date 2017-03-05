@@ -25,7 +25,6 @@ class Schapen(models.Model):
     geslacht_keuzes = ((1, 'Ram'), (2, 'Ooi'))
     objects = SchapenManager()
 
-    id = models.AutoField(primary_key=True)
     intern_nummer = models.CharField(max_length=50)
     geslacht = models.IntegerField(choices=geslacht_keuzes)
     geboortedatum = models.DateField(null=True, blank=True)
