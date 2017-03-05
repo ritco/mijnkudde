@@ -31,10 +31,14 @@ class Schapen(models.Model):
     einddatum = models.DateField(null=True, blank=True)
     Sanitel = models.CharField(max_length=11)
     moeder = models.ForeignKey('Schapen', models.SET_NULL, null=True,
-        related_name='moeders', blank=True
+        related_name='moeders',
+        blank=True,
+        limit_choices_to={'geslacht': 2}
     )
     vader = models.ForeignKey('Schapen', models.SET_NULL, null=True,
-        related_name='vaders', blank=True
+        related_name='vaders',
+        blank=True,
+        limit_choices_to={'geslacht': 1}
     )
     owner = models.ForeignKey(User, default=1, null=True)
     pub_datum = models.DateField(null=True, blank=True)

@@ -22,4 +22,4 @@ class AddSchapen(forms.ModelForm):
 
     class Meta:
         model = Schapen
-        exclude = ('owner',)
+        exclude = ('owner','pub_datum')
