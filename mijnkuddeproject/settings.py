@@ -86,18 +86,18 @@ WSGI_APPLICATION = 'mijnkuddeproject.wsgi.application'
 # ingesteld op MySQL ipv standaard sqlite3 --- Rik 3/01/2017
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'mijnkudde',
-    #     'USER': 'root',
-    #     'PASSWORD': '6jt4ZGWuT6qY',
-    #     'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-    #     'PORT': '3306',
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'dev.db'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mijnkudde',
+        'USER': 'root',
+        'PASSWORD': '6jt4ZGWuT6qY',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.path.join(BASE_DIR, 'dev.db'),
+    #}
 }
 
 
