@@ -28,7 +28,10 @@ SECRET_KEY = '7fu!=d@a49qp+2l@v)a#6$k%3ulfy#=w9f_cw9_5r*&4@j6n!m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['35.157.7.151']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '35.157.7.151',
+]
 
 
 # Application definition
@@ -53,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # custom middleware
+    'schapen.middleware.global_request.GlobalRequestMiddleware'
 ]
 
 ROOT_URLCONF = 'mijnkuddeproject.urls'
@@ -81,13 +86,17 @@ WSGI_APPLICATION = 'mijnkuddeproject.wsgi.application'
 # ingesteld op MySQL ipv standaard sqlite3 --- Rik 3/01/2017
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'mijnkudde',
+    #     'USER': 'root',
+    #     'PASSWORD': '6jt4ZGWuT6qY',
+    #     'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+    #     'PORT': '3306',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mijnkudde',
-        'USER': 'root',
-        'PASSWORD': '6jt4ZGWuT6qY',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'dev.db'),
     }
 }
 

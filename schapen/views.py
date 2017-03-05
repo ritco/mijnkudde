@@ -9,7 +9,6 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
 import datetime
-import forms
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
@@ -56,7 +55,7 @@ def bedrijf_schaap_toevoegen(request):
             #return render(request, 'bedrijf/alle_schapen.html', context)
             return HttpResponseRedirect(reverse('schapen:bedrijf_schaap_toevoegen'))
     else:
-        form = AddSchapen()
+        form = AddSchapen(request.user)
         return render(request, 'bedrijf/schaap_toevoegen.html',  {'form': form})
 
 @login_required

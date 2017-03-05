@@ -11,7 +11,10 @@ from schapen.models import *
 
 class SchapenAdmin(admin.ModelAdmin):
     model = Schapen
-    list_display = ('owner', 'intern_nummer', 'geslacht', 'geboortedatum', 'einddatum', 'Sanitel','vader','moeder')
+    list_display = (
+        'owner', 'intern_nummer', 'geslacht', 'geboortedatum', 'einddatum', 'Sanitel',
+        'moeder', 'vater'
+    )
     list_filter = ['geslacht', 'owner']
 
 admin.site.register(Schapen, SchapenAdmin)
