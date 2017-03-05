@@ -33,8 +33,8 @@ class Schapen(models.Model):
     moeder = models.ForeignKey('Schapen', models.SET_NULL, null=True,
         related_name='moeders', blank=True
     )
-    vater = models.ForeignKey('Schapen', models.SET_NULL, null=True,
-        related_name='vaters', blank=True
+    vader = models.ForeignKey('Schapen', models.SET_NULL, null=True,
+        related_name='vaders', blank=True
     )
     owner = models.ForeignKey(User, default=1, null=True)
     pub_datum = models.DateField(null=True, blank=True)
