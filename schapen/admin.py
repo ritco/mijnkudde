@@ -13,7 +13,7 @@ class SchapenAdmin(admin.ModelAdmin):
     model = Schapen
     list_display = (
         'owner', 'intern_nummer', 'geslacht', 'geboortedatum', 'einddatum', 'Sanitel',
-        'moeder', 'vater'
+        'moeder', 'vader'
     )
     list_filter = ['geslacht', 'owner']
 
